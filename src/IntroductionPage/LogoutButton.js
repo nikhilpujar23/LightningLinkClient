@@ -3,7 +3,8 @@ import React from "react";
 const LogoutButton = () => {
   const handleLogout = () => {
     localStorage.removeItem("jwt");
-    window.location.href = "https://connectify.website/";
+    localStorage.removeItem("user");
+    window.location.href = `${process.env.REACT_APP_CLIENT}`;
   };
 
   return (

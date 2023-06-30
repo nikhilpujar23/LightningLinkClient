@@ -14,29 +14,28 @@ const IntroductionPage = ({ setIsRoomHostAction }) => {
   const [googleId, setGoogleId] = useState("");
   const [name, setName] = useState("");
   const jwtToken = localStorage.getItem("jwt");
+  const user=localStorage.getItem("user");
 
   useEffect(() => {
     setIsRoomHostAction(false);
     // Проверка на jwt 
     const urlParams = new URLSearchParams(window.location.search);
     const jwtToken = urlParams.get("jwt");
-
+    const user=urlParams.get("user");
     if (jwtToken) {
       localStorage.setItem("jwt", jwtToken);
+      localStorage.setItem("user",user);
       // window.location = "https://connectify.website/";
       window.location="http://localhost:3000"
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    
   }, []);
 
   useEffect(() => {
     if (jwtToken) {
       const decodedToken = jwt.decode(jwtToken);
-      {console.log(decodedToken);}
-      if (decodedToken) {
-        // setGoogleId(decodedToken.user.googleId);
-        setName(decodedToken.user.username);
-      }
+      setName(user);
+     
     }
   }, [jwtToken]);
 
@@ -49,9 +48,12 @@ const IntroductionPage = ({ setIsRoomHostAction }) => {
   };
 
   return (
+
     <div className="introduction_page_container">
+      
       {jwtToken && (
         <div className="profile_data">
+          {console.log(name)}
           <h2>Name: {name}</h2>
         </div>
       )}
