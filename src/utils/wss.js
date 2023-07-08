@@ -4,7 +4,7 @@ import store from "../store/store";
 import { appendNewMessageToChatHistory } from "./directMessages";
 import * as webRTCHandler from "./webRTCHandler";
 
-const SERVER = "https://api.connectify.website";
+const SERVER = process.env.REACT_APP_SERVER;
 
 let socket = null;
 
