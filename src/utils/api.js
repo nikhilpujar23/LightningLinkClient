@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const serverApi = "https://api.connectify.website/api";
+const serverApi = process.env.REACT_APP_SERVER;
 
 export const getRoomExists = async (roomId) => {
   const response = await axios.get(`${serverApi}/room-exists/${roomId}`);

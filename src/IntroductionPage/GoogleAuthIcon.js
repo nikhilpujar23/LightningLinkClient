@@ -3,7 +3,7 @@ import React from 'react';
 const GoogleAuthIcon = () => {
   const handleGoogleAuth = () => {
     window.location.href = `${process.env.REACT_APP_SERVER}/api/googleAuth/redirect`
-    // 'https://api.connectify.website/api/googleAuth';
+    
   };
   
   return (
