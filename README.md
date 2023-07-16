@@ -1,46 +1,83 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+# Lightning Link
+## Hassle free Instant Video-Conferencing
 
-## Available Scripts
 
-In the project directory, you can run:
+Lghtning Link is a ReactJS+MongoDB powered website that can be used to create instant login free video conference meetings.
 
-### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Features
 
-### `npm test`
+- Host Meetings by just entering your name and sharing the meeting ID
+- Join Meetings by entering your name and an existing meeting
+- Chat individually with people in the meeting.
+- Group Chat facility
+- If a user wants his/her name saved so that the repeated manual entry is avoided, Google OAuth 2.0 has been integrated with the project. Once Signed in, the name will automatically be filled in for future sessions.
+- The code for the server is available at : [Server]
+- Front-end hosted on Vercel and Backend on On-Render
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+Check out other stuff i've worked on at [Github]
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Tech
 
-### `npm run eject`
+Venty uses a number of open source projects to work properly:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- ReactJS
+- MongoDB
+- NodeJS
+- Express
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+And of course Venty itself is open source.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Installation
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Venty requires [Node.js](https://nodejs.org/)  to run.
+## Edit the /server/config/keys.js
+ Create a project on firebase and populate the following variables
+ 
+```sh
+module.exports = {
+    google: {
+        clientID: '',
+        clientSecret: ''
+    },
+    session: {
+        secretWord: ''
+    },
+    mongodb: {
+        dbURI: ''
+    }
+};
+```
 
-## Learn More
+Install the dependencies and devDependencies and start the server and client.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-# LightningLink
-# LightningLinkClient
+```sh
+npm i
+npm run start
+```
+  [Server]: <https://github.com/nikhilpujar23/LightningLinkServer>
+   [GIthub]: <https://github.com/nikhilpujar23>
+   [NextJS]: <https://nextjs.org/>
+   [Firebase]: <https://firebase.google.com/>
+   [TailwindCSS]: <https://tailwindcss.com/>
+   [Vercel]: <https://vercel.com/dashboard>
+   [Chakra UI]: <https://chakra-ui.com/>
+   [node.js]: <http://nodejs.org>
+   
+   [express]: <http://expressjs.com>
+ module.exports = {
+    google: {
+        clientID: '839635663381-8r1a5fdhla5r9opn5if1qlnr89n8t0lk.apps.googleusercontent.com',
+        clientSecret: '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'
+    },
+    session: {
+        secretWord: 'testtest'
+    },
+    mongodb: {
+        dbURI: 'mongodb+srv://nikhilpujar:lightninglink@cluster0.e4rohul.mongodb.net/?retryWrites=true&w=majority'
+    }
+};
